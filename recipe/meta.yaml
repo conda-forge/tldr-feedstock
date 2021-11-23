@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4b36839553aea23d8e5b3a6e91f49ac601fe530cef146878f74522f6d87ce36a
+  url: https://github.com/tldr-pages/tldr-python-client/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 2e974b28d460ae1e8ade0ede92f96c2c564205daa0e0e7360b15d3fb5c576203
 
 build:
   number: 0
@@ -19,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - shtab
     - colorama
-    - python >=3.6
+    - python >=3.7
     - termcolor
 
 test:
