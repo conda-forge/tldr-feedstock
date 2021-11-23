@@ -14,9 +14,11 @@ build:
   noarch: python
   entry_points:
     - tldr = tldr:cli
-  script: {{ PYTHON }} -m pip install . -vv
+  script: curl https://raw.githubusercontent.com/tldr-pages/tldr-python-client/{{ version }}/requirements.txt > requirements.txt; {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - curl
   host:
     - pip
     - python >=3.6
