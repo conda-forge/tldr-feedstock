@@ -1,27 +1,29 @@
 {% set name = "tldr" %}
-{% set version = "2.0.0" %}
+{% set version = "3.0.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 731b10bf38bb84a73560408a783b26d08ac52eab2e9a55f89dba9a3c23a72892
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4b36839553aea23d8e5b3a6e91f49ac601fe530cef146878f74522f6d87ce36a
 
 build:
   number: 0
   noarch: python
   entry_points:
     - tldr = tldr:cli
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: curl https://raw.githubusercontent.com/tldr-pages/tldr-python-client/{{ version }}/requirements.txt > requirements.txt; {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - curl
   host:
     - pip
     - python >=3.6
   run:
-    - argcomplete
+    - shtab
     - colorama
     - python >=3.6
     - termcolor
@@ -31,11 +33,11 @@ test:
     - tldr --help
 
 about:
-  home: "https://github.com/tldr-pages/tldr-python-client"
+  home: https://github.com/tldr-pages/tldr-python-client
   license: MIT
   license_family: MIT
   license_file: LICENSE.md
-  summary: "command line client for tldr"
+  summary: command line client for tldr
 
 extra:
   recipe-maintainers:
