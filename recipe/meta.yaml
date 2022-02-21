@@ -1,5 +1,5 @@
 {% set name = "tldr" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4b36839553aea23d8e5b3a6e91f49ac601fe530cef146878f74522f6d87ce36a
+  sha256: 6c0b733e07425778d6be44ebb035f7424a90fd2a4d220be8e9a211519d5d0019
 
 build:
   number: 0
