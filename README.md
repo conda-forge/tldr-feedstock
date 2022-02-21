@@ -117,4 +117,5 @@ Feedstock Maintainers
 =====================
 
 * [@izahn](https://github.com/izahn/)
+* [@ngam](https://github.com/ngam/)
 
