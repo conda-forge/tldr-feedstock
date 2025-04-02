@@ -22,8 +22,9 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
   run:
-    - shtab
+    - shtab >=1.3.10
     - colorama
     - python >={{ python_min }}
     - termcolor
